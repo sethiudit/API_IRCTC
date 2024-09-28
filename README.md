@@ -20,13 +20,12 @@ A Railway Management System designed to allow users to check train availability,
 - **Seat Booking**: Users can book seats if available.
 - **Booking Details**: Users can view specific booking details.
 - **Rate Limiting**: Protects the API from excessive requests.
-- **Caching with Redis**: Improves performance by caching train availability.
+
 
 ## Tech Stack
 
 - **Backend**: Node.js, Express.js
 - **Database**: MySQL
-- **Caching**: Redis
 - **Middleware**: Compression, CORS, Rate Limiting
 - **Environment Variables**: dotenv
 
@@ -35,7 +34,7 @@ A Railway Management System designed to allow users to check train availability,
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/sethiudit/WorkIndia_Assignment.git
    cd railway-management-system
 2. Install dependencies:
 
@@ -47,17 +46,10 @@ A Railway Management System designed to allow users to check train availability,
     ADMIN_API_KEY="add-your-key"
     JWT_SECRET="add-your-secret"
     JWT_EXPIRES_IN="1d"
-4. Ensure you have MySQL/PostgreSQL and Redis installed and running on your machine.
+    DB_PASSWORD="your-db-password"
 
-5. **Install Redis**:
-   - For Windows, you can use [Docker](https://docs.docker.com/get-started/) or [WSL](https://docs.microsoft.com/en-us/windows/wsl/install).
+4. Ensure you have MySQL installed and running on your machine.
 
-6. **Run Redis**:
-   - If using Docker, run the following command:
-     ```bash
-     docker run --name redis -d -p 6379:6379 redis
-     ```
-   - If using WSL, follow the instructions for starting Redis on Ubuntu.
 
 ## Usage
 1. Start the server:
@@ -79,6 +71,7 @@ A Railway Management System designed to allow users to check train availability,
  - GET /api/v1/trains: Get available trains between two stations.
  - POST /api/v1/booking: Book a seat on a specific train.
  - GET /api/v1/booking/: Get specific booking details.
+ - PUT /api/v1/trains: To modify Train Details(Admin Only)
 
 ## Database Initialization
 The createTable.js script initializes the database and creates necessary tables. 
